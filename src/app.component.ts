@@ -1,25 +1,38 @@
+import { MainPageModule } from './modules/main-page.module';
+import { UtilModule } from './modules/util.module';
+import { CollectionModule } from './modules/collection.module';
+import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'App',
   template:
-  `<div>
-    <h2>Welcome to {{name}} Angular4!</h2>
-  </div>`
+  `
+    <router-outlet></router-outlet>
+    <main-page></main-page>
+  `
 })
 export class AppComponent implements OnInit {
-  public readonly name = 'electron-forge';
 
   ngOnInit(): void {
     console.log('component initialized');
   }
 }
 
+
 @NgModule({
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    CollectionModule,
+    UtilModule,
+    MainPageModule
+  ],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    CollectionModule,
+    MainPageModule
+  ]
 })
 export class AppModule { }
+
