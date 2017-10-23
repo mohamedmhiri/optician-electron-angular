@@ -60,7 +60,7 @@
     "npm": "^5.4.0",
     "reflect-metadata": "^0.1.10",
     "tslib": "^1.7.1",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.16"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
